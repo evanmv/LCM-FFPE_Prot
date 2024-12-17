@@ -44,18 +44,17 @@ sd(df.epi.t.scale$`Keratin, type I cytoskeletal 14`)
 #Transform (Each column is a sample, each row is a protein)
 df.epi.revert <- t(df.epi.t.scale)
 
-#Omit rows with NA 
-is.na(df.epi.revert) <- sapply(df.epi.revert, is.infinite)
-df.epi.scale.NAomit <- na.omit(df.epi.revert)
+#Change introduced NAs back to 0
+df.epi.revert[is.na(df.epi.revert)] <- 0
 
 ##PCA.Epi -----
 #Heirarchical clustering
-distance.epi <- dist(t(df.epi.scale.NAomit), method = "euclidean")
+distance.epi <- dist(t(df.epi.revert), method = "euclidean")
 clusters.epi <- hclust(distance.epi, method = "complete")
 plot(clusters.epi)
 
 #PCA
-pca.res.epi <- prcomp(t(df.epi.scale.NAomit), scale. = F, retx=T)
+pca.res.epi <- prcomp(t(df.epi.revert), scale. = F, retx=T)
 summary(pca.res.epi) #Prints variance summary 
 screeplot(pca.res.epi) #Screeplot is standard way to view eigenvalues for each PCA, not great for presenting
 pc.var.epi <- pca.res.epi$sdev^2 #Captures eigenvalues from PCA result
@@ -83,7 +82,7 @@ ggplot(pca.res.epi.df) + #Identify dataframe
   coord_fixed() +
   theme_bw()
 
-ggsave("Res/Scaled_PCA_epi.png")
+ggsave("Res/Scaled_PCA_epi_wNAs.png")
 
 ##Muscle -----
 #Transform data (rows as columns) and keep rows numeric. Apply prot names as column names and remove first row (was column names, not numerical, so we have to remove)
@@ -104,18 +103,21 @@ sd(df.m.t.scale$`Keratin, type I cytoskeletal 14`)
 df.m.revert <- t(df.m.t.scale)
 
 #Omit rows with NA 
-is.na(df.m.revert) <- sapply(df.m.revert, is.infinite)
-df.m.scale.NAomit <- na.omit(df.m.revert)
+#is.na(df.m.revert) <- sapply(df.m.revert, is.infinite)
+#df.m.scale.NAomit <- na.omit(df.m.revert)
+
+#Change introduced NAs back to 0 instead of omitting
+df.m.revert[is.na(df.m.revert)] <- 0
 
 ##PCA.m -----
 #Heirarchical clustering
-distance.m <- dist(t(df.m.scale.NAomit), method = "euclidean")
+distance.m <- dist(t(df.m.revert), method = "euclidean")
 clusters.m <- hclust(distance.m, method = "complete")
 plot(clusters.m)
 #samples <- colnames(df.m.scale.NAomit)
 
 #PCA
-pca.res.m <- prcomp(t(df.m.scale.NAomit), scale. = F, retx=T)
+pca.res.m <- prcomp(t(df.m.revert), scale. = F, retx=T)
 summary(pca.res.m) #Prints variance summary 
 screeplot(pca.res.m) #Screeplot is standard way to view eigenvalues for each PCA, not great for presenting
 pc.var.m <- pca.res.m$sdev^2 #Captures eigenvalues from PCA result
