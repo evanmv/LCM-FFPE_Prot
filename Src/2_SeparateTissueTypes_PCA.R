@@ -51,7 +51,7 @@ df.epi.scale.NAomit <- na.omit(df.epi.revert)
 ##PCA.Epi -----
 #Heirarchical clustering
 distance.epi <- dist(t(df.epi.scale.NAomit), method = "euclidean")
-clusters.epi <- hclust(distance.epi, method = "single")
+clusters.epi <- hclust(distance.epi, method = "complete")
 plot(clusters.epi)
 
 #PCA
