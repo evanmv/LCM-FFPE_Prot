@@ -1,7 +1,7 @@
 library(dplyr)
 ## Calculate fold change -----
 #Epi
-mydata.epi <- df.epi.revert %>% #Create mydata.df with new columns for averages and fold change
+mydata.epi <- df.epi.NAomit %>% #Create mydata.df with new columns for averages and fold change
   as_tibble()
 
 #These didn't work inside mutate() / Works fine now?
@@ -12,10 +12,10 @@ epi.near.AVG = rowMeans(select(mydata.epi, ends_with("EN")))
 
 
 mydata.epi <- mydata.epi %>%
-  mutate(far_AVG = epi.far.AVG,
-         near_AVG = epi.near.AVG,
-         LogFC = epi.far.AVG - epi.near.AVG) %>%
-  mutate(Protein_names = rownames(df.epi.revert)) %>%
+  mutate(far_AVG = rowMeans(select(mydata.epi, ends_with("EF"))),
+         near_AVG = rowMeans(select(mydata.epi, ends_with("EN"))),
+         LogFC = far_AVG - near_AVG) %>%
+  mutate(Protein_names = rownames(df.epi.NAomit)) %>%
   relocate(Protein_names) %>%
   mutate_if(is.numeric, round, 2) 
 
