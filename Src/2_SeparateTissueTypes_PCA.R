@@ -22,9 +22,9 @@ df.filtered.select <- df.filtered.tv %>%
 #Change column names to sample_group
 colnames(df.filtered.select) <- c("Protein_names", "1562_EF", "1563_EN", "1564_MF", "1565_MN", "1570_EF", "1571_EN", "1572_MF", "1573_MN", "1578_EF", "1579_EN", "1580_MF", "1581_MN", "1586_EF", "1587_EN", "1588_MF", "1589_MN", "1594_EF", "1595_EN", "1596_MF", "1597_MN", "1602_EF", "1603_EN", "1604_MF", "1605_MN", "1610_EF", "1611_EN", "1612_MF", "1613_MN", "1618_EF", "1619_EN", "1620_MF", "1621_MN", "1622_EF", "1623_EN", "1624_MF", "1625_MN")
 
-df.epi <- select(df.filtered.select, Protein_names, ends_with("EF"), ends_with("EN")) #Better to select all "E" to keep everything in order
+df.epi <- select(df.filtered.select, Protein_names, contains("E")) #Better to select all "E" to keep everything in order
 
-df.m <- select(df.filtered.select, Protein_names, ends_with("MF"), ends_with("MN"))
+df.m <- select(df.filtered.select, Protein_names, contains("M"))
 
 ##Epi -----
 #Transform data (rows as columns) and keep rows numeric. Apply prot names as column names and remove first row (was column names, not numerical, so we have to remove)
@@ -33,10 +33,11 @@ df.epi.t <- t(sapply(df.epi, as.numeric))
 colnames(df.epi.t) <- df.epi$Protein_names
 df.epi.t <- df.epi.t[-1,]
 
-df.epi.t.log2 <- log2(df.epi.t)
+#Log2 transformation - add constant of 1 to avoid -inf from 0s
+df.epi.t.log2_plus1 <- log2(df.epi.t + 1)
 
 #Uses function scale to Z-score normalize within protein column, confirm by taking mean/sd
-df.epi.t.scale <- scale(df.epi.t.log2) %>%
+df.epi.t.scale <- scale(df.epi.t.log2_plus1) %>%
   as.data.frame()
 mean(df.epi.t.scale$`Keratin, type I cytoskeletal 14`) #Confirm z-score normalization - mean = 0, st.dev = 1
 sd(df.epi.t.scale$`Keratin, type I cytoskeletal 14`)
@@ -44,17 +45,17 @@ sd(df.epi.t.scale$`Keratin, type I cytoskeletal 14`)
 #Transform (Each column is a sample, each row is a protein)
 df.epi.revert <- t(df.epi.t.scale)
 
-#Change introduced NAs back to 0
-df.epi.revert[is.na(df.epi.revert)] <- 0
+#Omit NAs
+df.scale.epi.NAomit <- na.omit(df.epi.revert)
 
 ##PCA.Epi -----
 #Heirarchical clustering
-distance.epi <- dist(t(df.epi.revert), method = "euclidean")
+distance.epi <- dist(t(df.scale.epi.NAomit), method = "euclidean")
 clusters.epi <- hclust(distance.epi, method = "complete")
 plot(clusters.epi)
 
 #PCA
-pca.res.epi <- prcomp(t(df.epi.revert), scale. = F, retx=T)
+pca.res.epi <- prcomp(t(df.scale.epi.NAomit), scale. = F, retx=T)
 summary(pca.res.epi) #Prints variance summary 
 screeplot(pca.res.epi) #Screeplot is standard way to view eigenvalues for each PCA, not great for presenting
 pc.var.epi <- pca.res.epi$sdev^2 #Captures eigenvalues from PCA result
@@ -63,7 +64,7 @@ pc.per.epi
 pca.res.epi.df <- as_tibble(pca.res.epi$x)
 
 #Read in target data for epi-- identify variables of interest
-targets.epi <- read.delim("Doc/targets_e.txt", sep = ",")
+targets.epi <- read.delim("Doc/targets_epi.txt")
 group.epi <- factor(targets.epi$group)
 sampleLabels.epi <- as.character(targets.epi$sample)
 #samples <- colnames(df.epi.scale.NAomit) #Used to get order of columns to edit targets.txt file 
@@ -82,7 +83,7 @@ ggplot(pca.res.epi.df) + #Identify dataframe
   coord_fixed() +
   theme_bw()
 
-ggsave("Res/Scaled_PCA_epi_wNAs.png")
+ggsave("Res/Scaled_PCA_epi.png")
 
 ##Muscle -----
 #Transform data (rows as columns) and keep rows numeric. Apply prot names as column names and remove first row (was column names, not numerical, so we have to remove)
