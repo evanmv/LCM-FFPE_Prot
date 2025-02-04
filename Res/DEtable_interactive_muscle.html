@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<script src="lib/core-js-2.5.3/shim.min.js"></script>
+<script src="lib/react-18.2.0/react.min.js"></script>
+<script src="lib/react-18.2.0/react-dom.min.js"></script>
+<script src="lib/reactwidget-2.0.0/react-tools.umd.cjs"></script>
+<script src="lib/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="lib/reactable-0.4.4/reactable.css" rel="stylesheet" />
+<script src="lib/reactable-binding-0.4.4/reactable.js"></script>
+
+</head>
+<body>
+<div id="kwbwanlrug" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+  <style>#kwbwanlrug table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#kwbwanlrug thead, #kwbwanlrug tbody, #kwbwanlrug tfoot, #kwbwanlrug tr, #kwbwanlrug td, #kwbwanlrug th {
+  border-style: none;
+}
+
+#kwbwanlrug p {
+  margin: 0;
+  padding: 0;
+}
+
+#kwbwanlrug .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#kwbwanlrug .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#kwbwanlrug .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#kwbwanlrug .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#kwbwanlrug .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#kwbwanlrug .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kwbwanlrug .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#kwbwanlrug .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#kwbwanlrug .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#kwbwanlrug .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#kwbwanlrug .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#kwbwanlrug .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#kwbwanlrug .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#kwbwanlrug .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#kwbwanlrug .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#kwbwanlrug .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#kwbwanlrug .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#kwbwanlrug .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#kwbwanlrug .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kwbwanlrug .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#kwbwanlrug .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#kwbwanlrug .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#kwbwanlrug .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kwbwanlrug .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#kwbwanlrug .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#kwbwanlrug .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kwbwanlrug .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kwbwanlrug .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#kwbwanlrug .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kwbwanlrug .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#kwbwanlrug .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kwbwanlrug .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#kwbwanlrug .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kwbwanlrug .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#kwbwanlrug .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kwbwanlrug .gt_left {
+  text-align: left;
+}
+
+#kwbwanlrug .gt_center {
+  text-align: center;
+}
+
+#kwbwanlrug .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#kwbwanlrug .gt_font_normal {
+  font-weight: normal;
+}
+
+#kwbwanlrug .gt_font_bold {
+  font-weight: bold;
+}
+
+#kwbwanlrug .gt_font_italic {
+  font-style: italic;
+}
+
+#kwbwanlrug .gt_super {
+  font-size: 65%;
+}
+
+#kwbwanlrug .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#kwbwanlrug .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#kwbwanlrug .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#kwbwanlrug .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#kwbwanlrug .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#kwbwanlrug .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#kwbwanlrug .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#kwbwanlrug .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#kwbwanlrug div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+  <div style="font-family:system-ui, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif;border-top-style:solid;border-top-width:2px;border-top-color:#D3D3D3;padding-bottom:8px;">
+    <div class="gt_heading gt_title gt_font_normal" style="text-size:bigger;"><span class='gt_from_md'><strong>Differentially Expressed Proteins in MN vs. MF</strong></span></div>
+    <div class="gt_heading gt_subtitle gt_bottom_border">Log10 FC &gt; 0.5 &amp; Q-value &lt; 0.01</div>
+  </div>
+  <div id="kwbwanlrug" class="reactable html-widget" style="width:auto;height:auto;"></div>
+  <script type="application/json" data-for="kwbwanlrug">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Protein.names":["Tubulin alpha-1A chain","Tubulin beta-6 chain","Histone H1.5","Periostin","Prothymosin alpha;Prothymosin alpha, N-terminally processed;Thymosin alpha-1","Thymidine phosphorylase","Monocyte differentiation antigen CD14;Monocyte differentiation antigen CD14, urinary form;Monocyte differentiation antigen CD14, membrane-bound form","Serpin H1","Cathepsin G","60S ribosomal protein L27","Tenascin","Transketolase","Costars family protein ABRACL","Tubulin beta-4A chain","Nestin","Dehydrogenase/reductase SDR family member 7","AP-2 complex subunit mu","Musculoskeletal embryonic nuclear protein 1","Fibulin-1","Beta-centractin","Macrophage-capping protein","CD44 antigen","Cathepsin Z","Cytoskeleton-associated protein 4","Actin-related protein 2/3 complex subunit 3","Ribosome-binding protein 1","Alpha-1-acid glycoprotein 1","Thy-1 membrane glycoprotein","Ig alpha-2 chain C region","Polypyrimidine tract-binding protein 1","Tubulin beta-3 chain","Translocon-associated protein subunit delta","Fascin","Ras GTPase-activating-like protein IQGAP1","60S ribosomal protein L34","Apolipoprotein L2","Thioredoxin domain-containing protein 5","Ras-related C3 botulinum toxin substrate 1","Actin-related protein 2/3 complex subunit 5","Synembryn-A","U6 snRNA-associated Sm-like protein LSm8","Protein S100-A11;Protein S100-A11, N-terminally processed","Plasma membrane calcium-transporting ATPase 4","Spliceosome RNA helicase DDX39B","Protein disulfide-isomerase A3","Cytoplasmic FMR1-interacting protein 1","Long-chain fatty acid transport protein 4","Rho GTPase-activating protein 1","Adenylyl cyclase-associated protein 1","Staphylococcal nuclease domain-containing protein 1","Parathymosin","Proteasome subunit alpha type-4","Tyrosine-protein phosphatase non-receptor type 1","Apoptosis regulator BAX","EF-hand domain-containing protein D2","Lipoma-preferred partner","Prolow-density lipoprotein receptor-related protein 1;Low-density lipoprotein receptor-related protein 1 85 kDa subunit;Low-density lipoprotein receptor-related protein 1 515 kDa subunit;Low-density lipoprotein receptor-related protein 1 intracellular domain","Procollagen-lysine,2-oxoglutarate 5-dioxygenase 3","Golgi apparatus protein 1","Transmembrane protein 43","Xin actin-binding repeat-containing protein 1","Unconventional myosin-Ib","Caldesmon","Nicotinamide phosphoribosyltransferase","Cytosolic non-specific dipeptidase","Inter-alpha-trypsin inhibitor heavy chain H1","Transaldolase","Fibronectin;Anastellin;Ugl-Y1;Ugl-Y2;Ugl-Y3","Protein enabled homolog","40S ribosomal protein S9","Translational activator GCN1","Heterogeneous nuclear ribonucleoprotein F;Heterogeneous nuclear ribonucleoprotein F, N-terminally processed","Fermitin family homolog 3","Interleukin enhancer-binding factor 3","Endophilin-A2","Heterogeneous nuclear ribonucleoprotein M","Heterogeneous nuclear ribonucleoprotein H;Heterogeneous nuclear ribonucleoprotein H, N-terminally processed","Far upstream element-binding protein 2","Heterogeneous nuclear ribonucleoprotein A3","Chloride intracellular channel protein 4","Alpha-1,3-mannosyl-glycoprotein 2-beta-N-acetylglucosaminyltransferase","Cleavage and polyadenylation specificity factor subunit 6","Angiopoietin-related protein 2","Perilipin-3","Tropomyosin alpha-4 chain","Heterogeneous nuclear ribonucleoprotein L","Poly [ADP-ribose] polymerase 14","60S ribosomal protein L13","Polyadenylate-binding protein 1","Proliferating cell nuclear antigen","Myosin-binding protein H","Cofilin-1","60S ribosomal protein L7","Coatomer subunit alpha;Xenin;Proxenin","Galectin-3","78 kDa glucose-regulated protein","X-ray repair cross-complementing protein 6","BTB/POZ domain-containing protein KCTD12","rRNA 2-O-methyltransferase fibrillarin","SH3 domain-binding glutamic acid-rich-like protein 3","Nucleolin","Actin-related protein 2","Heterogeneous nuclear ribonucleoprotein U","14-3-3 protein beta/alpha;14-3-3 protein beta/alpha, N-terminally processed","Filamin-A","Nuclear ubiquitous casein and cyclin-dependent kinase substrate 1","Src substrate cortactin","Actin, cytoplasmic 2;Actin, cytoplasmic 2, N-terminally processed","Protein transport protein Sec31A","Clathrin heavy chain 1","Ankyrin repeat domain-containing protein 2","Eukaryotic translation initiation factor 3 subunit C;Eukaryotic translation initiation factor 3 subunit C-like protein","40S ribosomal protein S8","Calnexin","RNA-binding protein 14","ATP-binding cassette sub-family D member 1","Signal transducer and activator of transcription 3","Cysteine and glycine-rich protein 3","Endoplasmin","Synaptopodin-2","Ras-related protein Ral-B","Splicing factor, proline- and glutamine-rich","40S ribosomal protein S21","Protein dpy-30 homolog","Vimentin","NAD(P) transhydrogenase, mitochondrial","ADP/ATP translocase 1","Succinyl-CoA ligase [ADP-forming] subunit beta, mitochondrial","Creatine kinase B-type","Glycerol-3-phosphate dehydrogenase [NAD(+)], cytoplasmic","Acetyl-CoA acetyltransferase, mitochondrial","Growth factor receptor-bound protein 14","Medium-chain specific acyl-CoA dehydrogenase, mitochondrial","Myozenin-3","Adenylosuccinate synthetase isozyme 1","Alanine aminotransferase 1","Carnitine O-palmitoyltransferase 1, muscle isoform","Acyl-coenzyme A thioesterase 1;Acyl-coenzyme A thioesterase 2, mitochondrial","Carnitine O-acetyltransferase","Phosphoglycerate mutase 2","Phosphorylase b kinase gamma catalytic chain, skeletal muscle/heart isoform","Glycogen phosphorylase, muscle form","NADH dehydrogenase [ubiquinone] 1 alpha subcomplex subunit 5","Sodium/potassium-transporting ATPase subunit alpha-2","NADH dehydrogenase [ubiquinone] 1 beta subcomplex subunit 10","Epimerase family protein SDR39U1","NADH dehydrogenase [ubiquinone] iron-sulfur protein 4, mitochondrial","Cytochrome c1, heme protein, mitochondrial"],"proteinID":["Q71U36","Q9BUF5","P16401","Q15063","P06454","P19971","P08571","P50454","P08311","P61353","P24821","P29401","Q9P1F3","P04350","P48681","Q9Y394","Q96CW1","Q8IVN3","P23142","P42025","P40121","P16070","Q9UBR2","Q07065","O15145","Q9P2E9","P02763","P04216","P0DOX2;P01877","P26599","Q13509","P51571","Q16658","P46940","P49207","Q9BQE5","Q8NBS9","P63000","O15511","Q9NPQ8","O95777","P31949","P23634","Q13838","P30101","Q7L576","Q6P1M0","Q07960","Q01518","Q7KZF4","P20962","P25789","P18031","Q07812","Q96C19","Q93052","Q07954","O60568","Q92896","Q9BTV4","Q702N8","O43795","Q05682","P43490","Q96KP4","P19827","P37837","P02751","Q8N8S7","P46781","Q92616","P52597","Q86UX7","Q12906","Q99961","P52272","P31943","Q92945","P51991","Q9Y696","P26572","Q16630","Q9UKU9","O60664","P67936","P14866","Q460N5","P26373","P11940","P12004","Q13203","P23528","P18124","P53621","P17931","P11021","P12956","Q96CX2","P22087","Q9H299","P19338","P61160","Q00839","P31946","P21333","Q9H1E3","Q14247","P63261","O94979","Q00610","Q9GZV1","Q99613;B5ME19","P62241","P27824","Q96PK6","P33897","P40763","P50461","P14625","Q9UMS6","P11234","P23246","P63220","Q9C005","P08670","Q13423","P12235","Q9P2R7","P12277","P21695","P24752","Q14449","P11310","Q8TDC0","Q8N142","P24298","Q92523","Q86TX2;P49753","P43155","P15259","Q16816","P11217","Q16718","P50993","O96000","Q9NRG7","O43181","P08574"],"Gene.names":["TUBA1A","TUBB6","HIST1H1B","POSTN","PTMA","TYMP","CD14","SERPINH1","CTSG","RPL27","TNC","TKT","ABRACL","TUBB4A","NES","DHRS7","AP2M1","MUSTN1","FBLN1","ACTR1B","CAPG","CD44","CTSZ","CKAP4","ARPC3","RRBP1","ORM1","THY1","IGHA2","PTBP1","TUBB3","SSR4","FSCN1","IQGAP1","RPL34","APOL2","TXNDC5","RAC1","ARPC5","RIC8A","LSM8","S100A11","ATP2B4","DDX39B","PDIA3","CYFIP1","SLC27A4","ARHGAP1","CAP1","SND1","PTMS","PSMA4","PTPN1","BAX","EFHD2","LPP","LRP1","PLOD3","GLG1","TMEM43","XIRP1","MYO1B","CALD1","NAMPT","CNDP2","ITIH1","TALDO1","FN1","ENAH","RPS9","GCN1L1","HNRNPF","FERMT3","ILF3","SH3GL1","HNRNPM","HNRNPH1","KHSRP","HNRNPA3","CLIC4","MGAT1","CPSF6","ANGPTL2","PLIN3","TPM4","HNRNPL","PARP14","RPL13","PABPC1","PCNA","MYBPH","CFL1","RPL7","COPA","LGALS3","HSPA5","XRCC6","KCTD12","FBL","SH3BGRL3","NCL","ACTR2","HNRNPU","YWHAB","FLNA","NUCKS1","CTTN","ACTG1","SEC31A","CLTC","ANKRD2","EIF3C;EIF3CL","RPS8","CANX","RBM14","ABCD1","STAT3","CSRP3","HSP90B1","SYNPO2","RALB","SFPQ","RPS21","DPY30","VIM","NNT","SLC25A4","SUCLA2","CKB","GPD1","ACAT1","GRB14","ACADM","MYOZ3","ADSSL1","GPT","CPT1B","ACOT1;ACOT2","CRAT","PGAM2","PHKG1","PYGM","NDUFA5","ATP1A2","NDUFB10","SDR39U1","NDUFS4","CYC1"],"FC":[1.3,1.27,1.18,1.15,1.14,1.13,1.11,1.1,1.09,1.09,1.06,1.03,0.97,0.96,0.96,0.95,0.93,0.92,0.92,0.92,0.9,0.9,0.89,0.87,0.87,0.86,0.86,0.86,0.86,0.86,0.85,0.84,0.84,0.81,0.8,0.8,0.79,0.79,0.78,0.78,0.77,0.77,0.76,0.76,0.75,0.75,0.74,0.74,0.74,0.73,0.72,0.72,0.72,0.72,0.72,0.71,0.71,0.71,0.7,0.7,0.7,0.69,0.69,0.69,0.68,0.68,0.68,0.68,0.68,0.68,0.67,0.67,0.67,0.66,0.66,0.66,0.65,0.64,0.64,0.63,0.63,0.63,0.63,0.61,0.61,0.6,0.6,0.6,0.6,0.59,0.59,0.59,0.59,0.59,0.59,0.58,0.58,0.58,0.58,0.58,0.57,0.57,0.57,0.56,0.56,0.56,0.55,0.55,0.55,0.55,0.54,0.54,0.53,0.53,0.52,0.52,0.52,0.52,0.51,0.51,0.51,0.51,0.51,0.5,0.5,-0.52,-0.52,-0.52,-0.53,-0.54,-0.55,-0.56,-0.56,-0.61,-0.61,-0.61,-0.62,-0.66,-0.66,-0.67,-0.69,-0.7,-0.7,-0.7,-0.7,-0.7,-0.76,-0.81],"p.value":[0.0015,6.8e-06,0.001,0.00011,0.00032,0.0027,0.00024,0.00055,0.0016,0.0019,0.0038,9.2e-05,0.0031,0.0035,0.00063,0.0023,0.0011,0.0014,0.0004,0.0024,0.0034,0.0045,0.0031,0.00012,0.0014,0.00042,0.00039,0.0012,0.0029,0.0034,0.0008,0.004,0.0035,0.00021,0.0025,0.0024,0.0028,0.0035,0.0035,0.00089,0.00043,0.0044,0.0035,0.0013,5.5e-05,0.0015,0.00038,0.0039,0.0011,0.00016,0.0039,0.0015,0.0023,0.0003,0.0032,0.0047,0.0012,0.002,0.001,0.00022,0.0032,0.0038,0.001,0.002,0.0017,0.0036,0.00033,0.0014,0.00049,0.0012,0.0015,0.0023,0.00024,0.0012,0.0038,0.00084,0.0012,0.00015,7.1e-05,0.0039,0.00052,0.0028,0.0026,0.00011,0.001,0.0034,0.0015,6.2e-05,0.0015,0.0013,0.0027,0.00024,0.0015,0.0039,0.0012,8.3e-05,0.0028,0.00075,0.0034,0.0019,0.00026,0.00014,0.0024,0.00096,0.00026,0.0043,0.0044,0.00014,0.00052,0.00062,0.0017,0.00049,0.00019,0.0021,0.0017,0.00086,0.00075,0.00034,0.00052,0.0011,2.4e-05,0.0042,0.00039,0.0013,0.00017,6.6e-05,0.0038,0.00025,0.0012,0.00081,1e-05,0.003,0.00021,0.001,0.00014,0.00043,2.6e-05,0.0026,0.0044,0.0024,0.0012,0.00015,0.00036,0.0017,0.002,0.00097,0.00065,0.0037],"Q.value":[0.0047,0,0.0046,0.00071,0.0023,0.0065,0.002,0.003,0.0047,0.0052,0.0088,0.00086,0.0079,0.0085,0.0036,0.0059,0.0045,0.0048,0.0022,0.0061,0.0084,0.0099,0.0079,0.00084,0.0047,0.0024,0.0021,0.0042,0.0071,0.0084,0.0043,0.0092,0.0084,0.0024,0.0064,0.0061,0.0068,0.0085,0.0084,0.0043,0.0024,0.0098,0.0085,0.0043,0.0015,0.0046,0.0022,0.0091,0.0044,0.0023,0.0091,0.0046,0.0061,0.0024,0.0078,0.01,0.0043,0.0054,0.0044,0.0022,0.0078,0.0088,0.0046,0.0055,0.005,0.0083,0.0022,0.0047,0.0025,0.0044,0.0047,0.0059,0.002,0.0044,0.0088,0.0042,0.0042,0.0019,0.001,0.009,0.0029,0.0067,0.0066,0.00067,0.0046,0.0083,0.0047,0.0013,0.0046,0.0045,0.0064,0.0021,0.0046,0.0091,0.0044,0.00092,0.0066,0.0042,0.0083,0.0053,0.0018,0.0018,0.0062,0.0043,0.0018,0.0096,0.0099,0.0022,0.003,0.0037,0.005,0.0025,0.0027,0.0056,0.0051,0.0044,0.0043,0.0022,0.0029,0.0045,0.0024,0.0092,0.0022,0.0044,0.0022,0.0011,0.009,0.002,0.0043,0.0042,0,0.0072,0.0024,0.0045,0.0019,0.0026,0.002,0.0065,0.0099,0.0063,0.0043,0.0019,0.0021,0.0052,0.0055,0.0043,0.0036,0.0087]},"columns":[{"id":"Protein.names","name":"Protein.names","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"proteinID","name":"proteinID","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"Gene.names","name":"Gene.names","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"FC","name":"FC","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"p.value","name":"p.value","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}},{"id":"Q.value","name":"Q.value","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","html":true,"align":"right","headerStyle":{"font-weight":"normal"}}],"filterable":true,"searchable":true,"defaultPageSize":10,"showPageSizeOptions":false,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"highlight":true,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"fontFamily":"system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"},"tableStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3"},"headerStyle":{"borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"}},"elementId":"kwbwanlrug","dataKey":"d80368721c2672b1a56d4b28f0cc078c"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style","tag.attribs.columns.3.style","tag.attribs.columns.4.style","tag.attribs.columns.5.style"],"jsHooks":[]}</script>
+</div>
+</body>
+</html>
